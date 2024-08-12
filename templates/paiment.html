@@ -6,7 +6,8 @@
     <title>Paiement</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://js.stripe.com/v3/"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/css/styles.css')}}"> 
+    
 </head>
 <body>
       
@@ -39,9 +40,9 @@
 
             <button type="submit">Payer</button>
         </form>
-        <a href="index.html"> revenir vers l'Accueil</a>
+        <a href="{{url_for('templates', filename='index.html')}}"> revenir vers l'Accueil</a>
     </main>
-    <script src="js/payment.js"></script>
+    <script src="{{url_for('static', filename='JavaScript/js/payment.js')}}"></script>
     
 </body>
 </html>
