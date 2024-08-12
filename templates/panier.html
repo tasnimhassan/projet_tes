@@ -14,11 +14,11 @@
     <button id="paiement" align-items ="flex-end" type="submit">Passer à la caisse</button>
     </div>
      <div class="ac">
-    <br><a href="index.html" > revenir vers l'Accueil</a>
+    <br><a href="{{url_for('templates', filename='index.html')}}" > revenir vers l'Accueil</a>
 </div>
     
-    <script src="java.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="{{url_for('static', filename='JavaScript/java.js')}}"></script>
+    <script src="{{url_for('static', filename='JavaScript/js/cart.js')}}"></script>
     <script>
         document.getElementById('paiement').addEventListener('click', function() 
         {
@@ -65,6 +65,29 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
