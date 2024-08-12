@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="produit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=jost:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPAY5w/91JmVM2hMDcnK10nMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/produit.css')}}">
+  
+</head>
+
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="T.PNG" alt="Logo"></a>
+        <ul class="navmenu">
+            <li><a href="index.html">Accueil</a></li> 
+            <li><a href="produit.html">Produit</a></li> 
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="paiment.html">Passer à la Caisse</a></li>
+        </ul>
+        <div class="nav-icon">
+            <a href="panier.html"><i class='bx bx-cart'></i>
+            <span id="cart-notification" class="cart-notification">0</span>
+            </a>
+        </div>
+    </header>
+
+
+    
+
+    <section class="trending-product" id="trending">
+        <div class="center-text">
+            <h2>nos <span>produit</span></h2>
+        </div>
+        <div class="products">
+            
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo1.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe kaki-Clair</h5>
+                </div>
+               
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="1">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo2.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe beige-blanc</h5>
+                </div>
+                
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="2">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo3.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe bordeau</h5>
+                </div>
+                
+               
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="3">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo4.jpg')}}" alt="" width="60%" height="60%">
+                <div class="product-text">
+                    <h5>Robe Blanc-noir</h5>
+                </div>
+               
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="10">Ajouter au panier</button>
+            </div>
+
+
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo10.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe Beige-Noir</h5>
+                </div>
+                
+               
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="4">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo8.jpg')}}" alt="" width="60%" height="60%">
+             
+                <div class="product-text">
+                    <h5>Robe orange-foncé</h5>
+                </div>
+                
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="5">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo5.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe kaki-Beige</h5>
+                </div>
+                
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="6">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo9.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe Vert-Blanc</h5>
+                </div>
+               
+               
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="7">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo6.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe Marron-clair-Beige</h5>
+                </div>
+                
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="8">Ajouter au panier</button>
+            </div>
+            <div class="row">
+                <img src="{{url_for('static', filename='Images/photo7.jpg')}}" alt="" width="60%" height="60%">
+
+                <div class="product-text">
+                    <h5>Robe Vert-Bleu</h5>
+                </div>
+                
+                
+                <div class="price">
+                    <h4>Nouveauté</h4>
+                    <p>5000franc</p>
+                </div>
+                <button type="button" class="add-to-cart" data-product-id="9">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="contact">
+        <div class="contact-inf0">
+            <div class="first-info">
+                <img src="{{url_for('static', filename='Images/T.PNG)}}" alt="" width="30%" height="30%">
+            <p>Djibouti</p>
+            <p>77620486</p>
+            <p>nimah5828@gmail.com</p>
+            <div class="social-icon">
+                <a href=""><i class='bx bxl-whatsapp'></i></a>
+                <a href=""><i class='bx bxl-instagram' ></i></a>
+                <a href=""><i class='bx bxl-facebook-circle' ></i></a>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+    <script>
+        var cartItems = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var productId = button.getAttribute('data-product-id');
+                addToCart(productId);
+            });
+        });
+
+        function addToCart(productId) {
+            var product = {
+                id: productId,
+                quantity: 1
+            };
+
+            var existingProduct = cartItems.find(item => item.id === productId);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cartItems.push(product);
+            }
+            console.log("Produit ajouté au panier avec l'ID:", productId);
+            console.log("Contenu du panier:", cartItems);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            var cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            cartItems.forEach(function(item) {
+                var productElement = document.createElement('div');
+                productElement.className = 'cart-item';
+                productElement.innerHTML = `
+                    <p>Produit ID: ${item.id}</p>
+                    <p>Quantité: ${item.quantity}</p>
+                    <button onclick="removeFromCart(${item.id})">Supprimer</button>
+                `;
+                cartItemsContainer.appendChild(productElement);
+            });
+
+            var cartTotalContainer = document.getElementById('cart-total');
+            var total = cartItems.reduce((sum, item) => sum + item.quantity * 5000, 0);  
+            cartTotalContainer.innerHTML = `Total: ${total} francs`;
+        }
+
+        function removeFromCart(productId) {
+            var index = cartItems.findIndex(item => item.id === productId);
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+                updateCartDisplay();
+            }
+        }
+    </script>
+    <script src="js/cart.js"></script>
+    <script src="java.js"></script>
+</body>
+</html>

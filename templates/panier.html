@@ -1,0 +1,89 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
+</head>
+<body>
+    <h1>Mon Panier</h1>
+    <div id="cart-items"></div>
+    <div id="cart-summary">
+    <div id="cart-total"></div>
+    <button id="paiement" align-items ="flex-end" type="submit">Passer à la caisse</button>
+    </div>
+     <div class="ac">
+    <br><a href="index.html" > revenir vers l'Accueil</a>
+</div>
+    
+    <script src="java.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.getElementById('paiement').addEventListener('click', function() 
+        {
+            window.location.href = 'paiment.html';
+        });
+        function updateCartDisplay() {
+            var cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.forEach(function(item) {
+                var productElement = document.createElement('div');
+                productElement.className = 'cart-item';
+                productElement.innerHTML = `
+                    <p>Produit ID: ${item.id}</p>
+                    <p>Quantité: <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)"></p>
+                    <button onclick="removeFromCart(${item.id})">Supprimer</button>
+                `;
+                cartItemsContainer.appendChild(productElement);
+            });
+
+            var cartTotalContainer = document.getElementById('cart-total');
+            var total = cartItems.reduce((sum, item) => sum + item.quantity * 5000, 0);  // Assuming each item costs 5000 francs
+            cartTotalContainer.innerHTML = `Total: ${total} francs`;
+        }
+        function updateQuantity(productId, quantity) {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            var product = cartItems.find(item => item.id === productId);
+            if (product) {
+                product.quantity = parseInt(quantity, 10);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCartDisplay();
+            }
+        }
+
+        function removeFromCart(productId) {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems = cartItems.filter(item => item.id !== productId);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCartDisplay();
+        }
+
+        updateCartDisplay();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

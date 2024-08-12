@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/contact
+    .css')}}">
+</head>
+<link rel="stylesheet" href="contact.css">
+<body>
+    <header>
+        <a href="#" class="logo"><img src="{{url_for('static', filename='Images/T.PNG')}}" alt="" >
+        </a>
+        <ul class="navmenu">
+            <li><a href="index.html">acceuil</a></li>
+            <li><a href="produit.html">produit</a></li>
+            <li><a href="#">panier</a></li>
+            <li><a href="contact.html">contact</a></li>
+            <!-- <li><a href="#">Docs</a></li> -->
+        </ul>
+        <div class="nav-icon">
+            <a href="#"><i class='bx bx-search'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+            <a href="#"><i class='bx bx-cart' ></i></a>
+        </div>
+        <div class="bx bx-menu" id="menu-icon">
+
+        </div>
+    </header>
+
+
+
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contacter <span>moi</span>
+        </h2>
+        <form  method="POST" action="enregistrer1.php">
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="number" placeholder="Numero telephone" name="identifiant"     required>
+                    <span class="focus"></span>
+                </div>
+
+
+
+                <div class="input-field">
+                    <input type="text" placeholder="Nom complet"  name="nom" required>
+                    <span class="focus"></span>
+                </div>
+
+                    <!-- <div class="input-field">
+                        <input type="text" placeholder="Email Adress" required>
+                        <span class="focus"></span>
+                    </div> -->
+
+
+            </div>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" placeholder="Email Adress"  name="email"   required>
+                    <span class="focus"></span>
+                </div>
+                
+
+                <!-- <div class="input-field">
+                    <input type="text" placeholder="Email Adress" required>
+                    <span class="focus"></span>
+                </div> -->
+
+                    <!-- <div class="input-field">
+                        <input type="text" placeholder="Email Sujet" required>
+                        <span class="focus"></span>
+                    </div> -->
+
+
+            </div>
+
+            <div class="textarea-field">
+                <textarea name="avis" id="" cols="30" rows="10" placeholder="Votre message"  required></textarea>
+                <span class="focus"></span>
+            </div>
+
+            <div class="btn-box btns">
+                <button type="submit" class="btn">Envoyer</button>
+            </div>
+            
+        </form>
+    
+
+    </section>
+
+
+
+    <footer class="contacts">
+        <div class="contact-inf0">
+            <div class="first-info">
+            <img src="T.PNG" alt="">
+            <p>Djibouti</p>
+            <p>77620486</p>
+            <p>nimah5828@gmail.com</p>
+            <div class="social-icon">
+                <a href=""><i class='bx bxl-whatsapp'></i></a>
+                <a href=""><i class='bx bxl-instagram' ></i></a>
+                <a href=""><i class='bx bxl-facebook-circle' ></i></a>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
