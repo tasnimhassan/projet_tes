@@ -12,7 +12,7 @@ class panier(db.Model):
 
 
 
-# paiement
+
 # from flask_sqlalchemy import SQLAlchemy
 
 # db = SQLAlchemy()
