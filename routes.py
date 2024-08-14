@@ -1,11 +1,20 @@
 
-from flask import Flask, request, jsonify, redirect, url_for
-from models import db, panier, paiment, contact 
-
+from flask import Flask, request, jsonify, redirect, url_for, render_template
+# from models import panier, paiment, contact 
+from app import *
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db.init_app(app)
 
+
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+              
+              
 @app.route('/panier', methods=['GET','POST'])
 def panier():
     data = request.json

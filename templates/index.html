@@ -5,39 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='CSS/css/styles.css')}}">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='CSS/css/styles.css')}}"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=jost:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- <link rel="stylesheet" href="css/styles.css"> -->
+
+  
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="T.PNG" alt="Logo"></a>
+        <a href="#" class="logo"><img src="{{url_for('static', filename='Images/T.PNG')}}" alt="Logo"></a>
         <ul class="navmenu">
-            <li><a href="index.html">Accueil</a></li> 
-            <li><a href="produit.html">Produit</a></li> 
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="paiment.html">Passer à la Caisse</a></li>
+            <li><a href="/index">Accueil</a></li> 
+            <li><a href="/produit">Produit</a></li> 
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/paiment">Passer à la Caisse</a></li>
         </ul>
         <div class="nav-icon">
-            <a href="panier.html"><i class='bx bx-cart'></i>
+            <a href="/panier"><i class='bx bx-cart'></i>
             </a>
         </div>
     </header>
 
     <section class="main-home">
-        <div class="main-text">
-            <h5>Les robes</h5>
-            <h3>nouvelles-arrivés</h3>
-            <p>des trés belles robes</p>
-            <a href="produit.html" class="main-btn">Achetez maintenant <i class='bx bx-right-arrow-alt'></i></a>
-        </div>
-        <div class="home-imghover"></div>
-        <div class="doxn-arrow">
-            <a href="#trending" class="down"> <i class='bx bx-down-arrow-alt'></i></a>
+        <div class="ligne">
+            <div class="col">
+                <div class="main-text">
+                    <h5>Les robes</h5>
+                    <h3>nouvelles-arrivés</h3>
+                    <p>des trés belles robes</p>
+                    <a href="produit.html" class="main-btn">Achetez maintenant <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="home-imghover"></div>
+                <div class="doxn-arrow">
+                    <a href="#trending" class="down"> <i class='bx bx-down-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="col">
+                <img src="{{url_for('static', filename='Images/photo4.jpg')}}" alt="" width="50%">
+            </div>
         </div>
     </section>
 
@@ -193,7 +202,7 @@
 
     <section class="client-review">
         <div class="reviews">
-            <img src="{{url_for('static', filename='Images/ta.PNG)}}" alt="" width="30%" height="30%">
+            <img src="{{url_for('static', filename='Images/ta.PNG')}}" alt="" width="30%" height="30%">
 
             <p>
                 Salut c'est moi Tesline, une jeune fille ambitieuse !!
