@@ -3,8 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/css/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/contact.css')}}">
 </head>
 <body>
     <h1>Mon Panier</h1>
@@ -14,15 +15,33 @@
     <button id="paiement" align-items ="flex-end" type="submit">Passer à la caisse</button>
     </div>
      <div class="ac">
-    <br><a href="{{url_for('templates', filename='index.html')}}" > revenir vers l'Accueil</a>
+    <br><a href= "/" > revenir vers l'Accueil</a>
 </div>
+<form  method="POST" action="">
+    <h1 class="tes">VEILLEZ REMPLIR CES INFORMATION!!</h1>
+   <center><div class="input-box">
+        <div class="input-field">
+            <input type="text" placeholder="le nom de votre robe" name="robe"     required>
+            <span class="focus"></span>
+        </div>
+        <div class="input-box">
+            <div class="input-field">
+                <input type="number" placeholder="nombre de robes?" name="nombre"     required>
+                <span class="focus"></span>
+            </div>
+            <div class="btn-box btns">
+               <button type="submit" class="btn">Envoyer</button>
+            </div>
+        </center> 
+            
+        </form>
     
     <script src="{{url_for('static', filename='JavaScript/java.js')}}"></script>
     <script src="{{url_for('static', filename='JavaScript/js/cart.js')}}"></script>
     <script>
         document.getElementById('paiement').addEventListener('click', function() 
         {
-            window.location.href = 'paiment.html';
+            window.location.href = '/paiment';
         });
         function updateCartDisplay() {
             var cartItemsContainer = document.getElementById('cart-items');
@@ -60,9 +79,10 @@
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
             updateCartDisplay();
         }
-
+ 
         updateCartDisplay();
     </script>
+    
 </body>
 </html>
 

@@ -92,8 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         renderCartItems();
-
-        window.location.href = 'panier.html';
+        window.location.href = "/panier";
     }
     
 

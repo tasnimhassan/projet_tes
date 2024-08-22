@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="produit.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=jost:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,18 +19,19 @@
 </head>
 
 
+
 <body>
     <header>
-        <a href="#" class="logo"><img src="T.PNG" alt="Logo"></a>
+        <a href="#" class="logo"><img src="{{url_for('static', filename='Images/T.PNG')}}" alt="Logo"></a>
         <ul class="navmenu">
-            <li><a href="/index">Accueil</a></li> 
+            <li><a href="/">Accueil</a></li> 
             <li><a href="/produit">Produit</a></li> 
             <li><a href="/contact">Contact</a></li>
             <li><a href="/paiment">Passer à la Caisse</a></li>
         </ul>
         <div class="nav-icon">
             <a href="/panier"><i class='bx bx-cart'></i>
-            <span id="cart-notification" class="cart-notification">0</span>
+           
             </a>
         </div>
     </header>
@@ -38,6 +40,7 @@
     
 
     <section class="trending-product" id="trending">
+        <form action="" method="post"></form>
         <div class="center-text">
             <h2>nos <span>produit</span></h2>
         </div>
@@ -55,7 +58,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="1">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="1" name="Robe kaki-Clair">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo2.jpg')}}" alt="" width="60%" height="60%">
@@ -69,7 +72,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="2">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="2" name="Robe beige-blanc">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo3.jpg')}}" alt="" width="60%" height="60%">
@@ -83,7 +86,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="3">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="3" name="Robe bordeau">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo4.jpg')}}" alt="" width="60%" height="60%">
@@ -96,7 +99,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="10">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="10" name="Robe Blanc-noir">Ajouter au panier</button>
             </div>
 
 
@@ -112,7 +115,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="4">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="4" name="Robe Beige-Noir">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo8.jpg')}}" alt="" width="60%" height="60%">
@@ -126,7 +129,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="5">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="5" name="Robe orange-foncé">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo5.jpg')}}" alt="" width="60%" height="60%">
@@ -140,7 +143,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="6">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="6" name="Robe kaki-Beige">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo9.jpg')}}" alt="" width="60%" height="60%">
@@ -154,7 +157,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="7">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="7" name="Robe Vert-Blanc">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo6.jpg')}}" alt="" width="60%" height="60%">
@@ -168,7 +171,7 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="8">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="8" name="Robe Marron-clair-Beige">Ajouter au panier</button>
             </div>
             <div class="row">
                 <img src="{{url_for('static', filename='Images/photo7.jpg')}}" alt="" width="60%" height="60%">
@@ -182,27 +185,31 @@
                     <h4>Nouveauté</h4>
                     <p>5000franc</p>
                 </div>
-                <button type="button" class="add-to-cart" data-product-id="9">Ajouter au panier</button>
+                <button type="button" class="add-to-cart" data-product-id="9" name="Robe Vert-Bleu">Ajouter au panier</button>
             </div>
         </div>
+        
+    </form>
     </section>
 
 
     <footer class="contact">
         <div class="contact-inf0">
             <div class="first-info">
-                <img src="{{url_for('static', filename='Images/T.PNG)}}" alt="" width="30%" height="30%">
+                <img src="{{url_for('static', filename='Images/T.PNG')}}" alt="" >
+
             <p>Djibouti</p>
             <p>77620486</p>
             <p>nimah5828@gmail.com</p>
             <div class="social-icon">
                 <a href=""><i class='bx bxl-whatsapp'></i></a>
-                <a href=""><i class='bx bxl-instagram' ></i></a>
-                <a href=""><i class='bx bxl-facebook-circle' ></i></a>
+                <a href=""><i class='bx bxl-instagram'></i></a>
+                <a href=""><i class='bx bxl-facebook-circle'></i></a>
             </div>
             </div>
         </div>
     </footer>
+    
 
     
 

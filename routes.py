@@ -1,10 +1,27 @@
+from flask import Flask, request, jsonify, redirect, url_for, render_template,flash,session
 
-from flask import Flask, request, jsonify, redirect, url_for, render_template
-# from models import panier, paiment, contact 
+
+
+from Model import Panier
+from Model import Paiment
+from Model import Contact
+
+
+
 from app import *
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SECRET_KEY'] = 'your_secret_key'
 db.init_app(app)
+with app.app_context():
+    db.create_all()
+
+
+
+
+
+
+    
 
 
 
@@ -13,121 +30,83 @@ db.init_app(app)
 def index():
     return render_template('index.html')
 
-              
-              
-@app.route('/panier', methods=['GET','POST'])
+@app.route('/produit')
+def produit():
+    return render_template('produit.html')    
+
+
+@app.route('/panier', methods=['GET', 'POST'])
 def panier():
-    data = request.json
-    cart_items = data.get('cartItems', [])
+    if request.method == 'POST':
+        produit_id = request.form['robe']
+        quantite= request.form['nombre']
 
-    if not cart_items:
-        return jsonify({'message': 'Le panier est vide'}), 400
+         # Création d'un nouvel objet objet
+        nouveau_panier = Panier(produit_id=produit_id , quantite=quantite)
 
-    try:
-        for item in cart_items:
-            produit_id = item['id']
-            quantite = item['quantity']
-
-            existing_item = Panier.query.filter_by(produit_id=produit_id).first()
-            if existing_item:
-                existing_item.quantite += quantite
-            else:
-                new_item = Panier(produit_id=produit_id, quantite=quantite)
-                db.session.add(new_item)
-
+        # Ajouter et sauvegarder dans la base de données
+        db.session.add(nouveau_panier)
         db.session.commit()
-        return jsonify({'message': 'Panier mis à jour avec succès'}), 200
 
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({'message': 'Erreur lors de la mise à jour du panier', 'error': str(e)}), 500
+        return redirect(url_for('panier'))
+    
+    return render_template('panier.html')
+
+
+        
+
+
+
+
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        phone_number = request.form['identifiant']
+        full_name= request.form['nom']
+        email = request.form['email']
+        message= request.form['avis']
+
+        # Création d'un nouvel objet Contact
+        nouveau_contact = Contact(phone_number=phone_number, full_name=full_name, email=email, message=message)
+
+        # Ajouter et sauvegarder dans la base de données
+        db.session.add(nouveau_contact)
+        db.session.commit()
+
+        return redirect(url_for('contact'))
+    
+    return render_template('contact.html')
+
+
+
+
+@app.route('/paiment', methods=['GET', 'POST'])
+def paiment():
+    if request.method == "POST":
+        first_name = request.form['first-name']
+        last_name = request.form['last-name']
+        card_name = request.form['card-name']
+        card_number = request.form['card-number']
+        expiry_date = request.form['expiry-date']
+        cvv = request.form['cvv']
+        address = request.form['address']
+
+        # Création d'un nouvel objet paiment
+        nouveau_paiment =Paiment(first_name=first_name, last_name=last_name, card_name=card_name, card_number=card_number, expiry_date=expiry_date, cvv=cvv, address=address)
+
+        # Ajouter et sauvegarder dans la base de données
+        db.session.add(nouveau_paiment)
+        db.session.commit()
+
+        return redirect(url_for('paiment'))
+    
+    return render_template('paiment.html')    
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-@app.route('/paiment', methods=['GET','POST'])
-def paiment():
-    first_name = request.form.get('first-name')
-    last_name = request.form.get('last-name')
-    card_name = request.form.get('card-name')
-    card_number = request.form.get('card-number')
-    expiry_date = request.form.get('expiry-date')
-    cvv = request.form.get('cvv')
-    address = request.form.get('address')
-
-    # Créez une instance de PaymentInfo
-    payment_info = Paiment(
-        first_name=first_name,
-        last_name=last_name,
-        card_name=card_name,
-        card_number=card_number,
-        expiry_date=expiry_date,
-        cvv=cvv,
-        address=address
-    )
-
-    # Ajoutez et validez l'information de paiement
-    try:
-        db.session.add(payment_info)
-        db.session.commit()
-        return redirect(url_for('payment_success'))  # Redirigez vers une page de succès après l'ajout
-    except Exception as e:
-        db.session.rollback()
-        print(f"Erreur: {e}")
-        return redirect(url_for('payment_failure'))  # Redirigez vers une page d'échec en cas d'erreur
-
-@app.route('/payment-success')
-def payment_success():
-    return "Votre paiement a été enregistré avec succès !"
-
-@app.route('/payment-failure')
-def payment_failure():
-    return "Une erreur est survenue lors de l'enregistrement du paiement."
-
-
-
-
-
-
-
-
-@app.route('/contact', methods=['GET','POST'])
-def contact():
-    phone_number = request.form.get('identifiant')
-    full_name = request.form.get('nom')
-    email = request.form.get('email')
-    message = request.form.get('avis')
-
-    # Créez une instance de ContactInfo
-    contact_info = contact(
-        phone_number=phone_number,
-        full_name=full_name,
-        email=email,
-        message=message
-    )
-
-    # Ajoutez et validez l'information de contact
-    try:
-        db.session.add(contact_info)
-        db.session.commit()
-        return redirect(url_for('contact_success'))  # Redirigez vers une page de succès après l'ajout
-    except Exception as e:
-        db.session.rollback()
-        print(f"Erreur: {e}")
-        return redirect(url_for('contact_failure'))  # Redirigez vers une page d'échec en cas d'erreur
-
-@app.route('/contact-success')
-def contact_success():
-    return "Votre message a été envoyé avec succès !"
-
-@app.route('/contact-failure')
-def contact_failure():
-    return "Une erreur est survenue lors de l'envoi de votre message."
-
 
 
 

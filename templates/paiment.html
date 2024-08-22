@@ -13,7 +13,7 @@
       
     <h1 class="custom">Informations de Paiement</h1>
     <main>
-        <form id="payment-form" method="post">
+        <form action="" id="payment-form" method="POST">
             <div class="form-group">
                 <label for="first-name">Prénom :</label>
                 <input type="text" id="first-name" name="first-name" required>
@@ -40,7 +40,7 @@
 
             <button type="submit">Payer</button>
         </form>
-        <a href="{{url_for('templates', filename='index.html')}}"> revenir vers l'Accueil</a>
+        <a href= "/"> revenir vers l'Accueil</a>
     </main>
     <script src="{{url_for('static', filename='JavaScript/js/payment.js')}}"></script>
     

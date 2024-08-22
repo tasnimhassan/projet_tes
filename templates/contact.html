@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='CSS/contact
-    .css')}}">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/contact.css')}}">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/produit.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=jost:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    
+    
 </head>
-<link rel="stylesheet" href="contact.css">
+
 <body>
     <header>
         <a href="#" class="logo"><img src="{{url_for('static', filename='Images/T.PNG')}}" alt="" >
         </a>
         <ul class="navmenu">
-            <li><a href="/index">acceuil</a></li>
+            <li><a href="/">acceuil</a></li>
             <li><a href="/produit">produit</a></li>
-            <li><a href="#">panier</a></li>
+            <li><a href="/paiment">passer a la caisse</a></li>
+           
             <li><a href="/contact">contact</a></li>
-            <!-- <li><a href="#">Docs</a></li> -->
+            <div class="nav-icon">
+                <a href="/panier"><i class='bx bx-cart'></i>
+                </a>
+            </div>
+            
+            
         </ul>
-        <div class="nav-icon">
-            <a href="#"><i class='bx bx-search'></i></a>
-            <a href="#"><i class='bx bx-user'></i></a>
-            <a href="#"><i class='bx bx-cart' ></i></a>
-        </div>
-        <div class="bx bx-menu" id="menu-icon">
+       
+        <div >
 
         </div>
     </header>
@@ -33,9 +44,9 @@
 
 
     <section class="contact" id="contact">
-        <h2 class="heading">Contacter <span>moi</span>
+       <br> <h2 class="heading">Contacter <span>moi</span>
         </h2>
-        <form  method="POST" action="enregistrer1.php">
+        <form  method="POST" action="">
             <div class="input-box">
                 <div class="input-field">
                     <input type="number" placeholder="Numero telephone" name="identifiant"     required>
@@ -49,10 +60,7 @@
                     <span class="focus"></span>
                 </div>
 
-                    <!-- <div class="input-field">
-                        <input type="text" placeholder="Email Adress" required>
-                        <span class="focus"></span>
-                    </div> -->
+                  
 
 
             </div>
@@ -64,15 +72,7 @@
                 </div>
                 
 
-                <!-- <div class="input-field">
-                    <input type="text" placeholder="Email Adress" required>
-                    <span class="focus"></span>
-                </div> -->
-
-                    <!-- <div class="input-field">
-                        <input type="text" placeholder="Email Sujet" required>
-                        <span class="focus"></span>
-                    </div> -->
+               
 
 
             </div>
@@ -96,18 +96,20 @@
     <footer class="contacts">
         <div class="contact-inf0">
             <div class="first-info">
-            <img src="T.PNG" alt="">
+                <img src="{{url_for('static', filename='Images/T.PNG')}}" alt="" >
+
             <p>Djibouti</p>
             <p>77620486</p>
             <p>nimah5828@gmail.com</p>
             <div class="social-icon">
                 <a href=""><i class='bx bxl-whatsapp'></i></a>
-                <a href=""><i class='bx bxl-instagram' ></i></a>
-                <a href=""><i class='bx bxl-facebook-circle' ></i></a>
+                <a href=""><i class='bx bxl-instagram'></i></a>
+                <a href=""><i class='bx bxl-facebook-circle'></i></a>
             </div>
             </div>
         </div>
     </footer>
+    
 
     <script src="{{url_for('static', filename='JavaScript/java.js')}}"></script>
     
