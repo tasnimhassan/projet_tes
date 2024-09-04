@@ -19,14 +19,25 @@
     <header>
         <a href="#" class="logo"><img src="{{url_for('static', filename='Images/T.PNG')}}" alt="Logo"></a>
         <ul class="navmenu">
-            <li><a href="">Accueil</a></li> 
+            <li><a href="/index">Accueil</a></li> 
             <li><a href="/produit">Produit</a></li> 
             <li><a href="/contact">Contact</a></li>
             <li><a href="/paiment">Passer à la Caisse</a></li>
+            <li> <a class="nav-link "href="/sedeconnecter" >Se deconnecter</a></li>
+            <!-- <li><a href="/inscription">s'inscrire</a></li>
+            <li><a href="/login">Se connecter</a></li> -->
         </ul>
-        <div class="nav-icon">
+        <!-- <div class="nav-icon">
             <a href="/panier"><i class='bx bx-cart'></i>
             </a>
+        </div> -->
+        <div class="nav-icon">
+            <a href="#"><i class='bx bx-search'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+            <a href="/panier"><i class='bx bx-cart' ></i></a>
+        </div>
+        <!-- <div class="bx bx-menu" id="menu-icon"> -->
+
         </div>
     </header>
 
