@@ -18,11 +18,6 @@ class Panier(db.Model):
 
 
 
-
-
-
-
-
 class Paiment(db.Model):
     __tablename__ = 'paiment'
     

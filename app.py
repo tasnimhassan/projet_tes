@@ -1,6 +1,6 @@
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_migrate import Migrate
 
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///database.db'
@@ -12,11 +12,18 @@ db = SQLAlchemy(app)
 
 
 
+# Configurez Flask-Migrate
+migrate = Migrate(app, db)
+
+
+# Importez vos modèles ici
+from Model import *
 from routes import *
 print("importation reussie")
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     pass
+    # db.create_all()
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
