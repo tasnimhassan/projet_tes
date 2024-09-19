@@ -9,11 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=jost:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPAY5w/91JmVM2hMDcnK10nMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{url_for('static', filename='CSS/produit.css')}}">
   
 </head>
@@ -28,8 +25,10 @@
             <li><a href="/produit">Produit</a></li> 
             <li><a href="/contact">Contact</a></li>
             <li><a href="/paiment">Passer à la Caisse</a></li>
+            <li> <a class="nav-link "href="/sedeconnecter" >Se deconnecter</a></li>
         </ul>
         <div class="nav-icon">
+            <a href="/recherche"><i class='bx bx-search'></i></a>
             <a href="/panier"><i class='bx bx-cart'></i>
            
             </a>

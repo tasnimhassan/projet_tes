@@ -35,7 +35,7 @@ header{
     font-weight: 400;
     transition: all .42s ease;
 }
-.navmenu a:hover{
+.navmenu a{
     color:brown;
 }
 .nav-icon{
@@ -174,7 +174,7 @@ header.sticky{
 
 
 .contacts{
-    background-color: rgb(255, 240, 240);
+    background-color: rgba(226, 43, 43,0.8);
    margin-top: 5%;
     display: flex;
     justify-content: center;
@@ -192,4 +192,7 @@ header.sticky{
 .first-info img{
     width: 140px;
     height: auto;
+}
+.first-info p{
+    color: white;
 }

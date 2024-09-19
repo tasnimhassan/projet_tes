@@ -33,7 +33,7 @@ header{
     font-weight: 400;
     transition: all .42s ease;
 }
-.navmenu a:hover{
+.navmenu a{
     color:brown;
 }
 .nav-icon{
@@ -214,7 +214,7 @@ section{
     }
 
     .price p{
-        color: rgb(17, 58, 209);
+        color: black
         font-size: 14px;
         font-weight: 600;
     }
@@ -223,13 +223,13 @@ section{
     .add-to-cart{
         color: white;
         z-index:  -1;
-        background-color: rgb(255, 0, 179);
+        background-color:rgba(226, 43, 43,0.8);
         border-radius: 5PX;
     }
 
 
     .contact{
-        background-color: rgb(255, 240, 240);
+        background-color: rgba(226, 43, 43,0.8);
        margin-top: 10%;
         display: flex;
         justify-content: center;

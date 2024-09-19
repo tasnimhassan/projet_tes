@@ -21,25 +21,25 @@
 
         <form class="w-75 mx-auto border p-3 mt-5" method="POST">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label" >Email address</label>
+              <label for="exampleInputEmail1" class="form-label" >Address Email</label>
               <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <div id="emailHelp" class="form-text">On le partegera avec personne votre email.</div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label" >Password</label>
+              <label for="exampleInputPassword1" class="form-label" >Mot de passe</label>
               <input type="password" name="password"  class="form-control" id="exampleInputPassword1" required >
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label">Retaper le Password</label>
+                <label for="exampleInputPassword2" class="form-label">Retaper le Mot de passe</label>
                 <input type="password" name="rePassword" class="form-control" id="exampleInputPassword1">
               </div>
             
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
-            <a href="/login"> Se connecter</a>
+            <button type="submit" class="btn btn-danger">S'inscrire</button>
+            <a href="/login" class="btn btn-danger"> Se connecter</a>
           </form>
     </div>
     <div class="col ">
-        <img src="{{url_for('static', filename='Images/photo4.jpg')}}" alt="" class="w-100 h-100">
+        <img src="{{url_for('static', filename='Images/photo4.jpg')}}" alt="" width="65%" height="90%" >
     </div>
     <link rel="stylesheet" href="{{url_for('static', filename='CSS/css/bootstrap.min.css')}}">
 

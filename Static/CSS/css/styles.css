@@ -117,9 +117,9 @@ h1 {
     width: fit-content;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #b8d0bd;
+    background-color:rgb(226, 43, 43);;
     font-weight: bold;
-    color: #000;
+    color:white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -127,9 +127,7 @@ h1 {
     text-align: center;
 }
 
-#paiement:hover {
-    background-color: #218838;
-}
+
 
 .form-group {
     display: flex;
@@ -153,15 +151,16 @@ button[type="submit"] {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #b8d0bd;
-    color: #000;
+    color:white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
 }
 
-button[type="submit"]:hover {
-    background-color: #218838;
+button[type="submit"] {
+    background-color: red;
+
 }
 
 .add-to-cart {
@@ -210,4 +209,7 @@ main {
 }
 .ac{
     text-decoration: underline;
+}
+.t{
+    color: black;
 }
