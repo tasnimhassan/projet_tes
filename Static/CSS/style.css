@@ -33,7 +33,7 @@ header{
     font-weight: 400;
     transition: all .42s ease;
 }
-.navmenu a:hover{
+.navmenu a{
     color:brown;
 }
 .nav-icon{
@@ -75,7 +75,7 @@ section{
     align-items: center;
 }
 .main-text h5{
-    color:rgb(221, 7, 139);
+    color:rgb(226, 43, 43);
     font-size: 16px;
     text-transform: capitalize;
     font-weight: 500;
@@ -89,7 +89,7 @@ section{
     margin: 6px 0 10px;
 }
 .main-text p{
-    color:rgb(221, 7, 139);
+    color:rgb(226, 43, 43);
     font-size: 20px;
     font-style: italic;
     margin-bottom: 20px;
@@ -134,7 +134,7 @@ section.main-home div.ligne{
     background-size: 50%;
     border-radius: 50%;
     }
-    .main-btn:hover{
+    .main-btn{
         background-color: brown;
         color: aliceblue;
     }
@@ -264,8 +264,8 @@ section.main-home div.ligne{
     .add-to-cart{
         color: white;
         z-index:  -1;
-        background-color: rgb(255, 0, 179);
-        border-radius: 5PX;
+        background-color: rgba(226, 43, 43,0.8);
+        border-radius: 5%;
     }
 
 
@@ -404,7 +404,7 @@ section.main-home div.ligne{
 /* !fotter */
 
     .contact{
-        background-color: rgb(255, 240, 240);
+        background-color: rgba(226, 43, 43,0.8);
        margin-top: 10%;
         display: flex;
         justify-content: center;
@@ -415,8 +415,14 @@ section.main-home div.ligne{
         display: grid;
         /* grid-template-columns: repeat(auto-fit,minmax(160px,auto)); */
         gap: 3rem;
+        
+        
     }
     .first-info img{
         width: 140px;
         height: auto;
     }
+    .first-info p{
+        color: white;
+    }
+    

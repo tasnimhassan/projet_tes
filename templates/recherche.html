@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/recherche.css')}}"> 
+</head>
+<body  background="{{url_for('static', filename='Images/photo4.jpg')}}" >
+    <center>
+    <h1>RECHERCHER LA ROBE QUE VOUS VOULEZ</h1>
+    <input type="search" id="search" value="" onchange="ouvrirPage()">
+   <br> <input type="button" id="button" onclick="ouvrirPage()" value="Chercher">
+
+    <script src="{{url_for('static', filename='JavaScript/recher.js')}}"></script>
+   <br> <a href= "/index" class="v"> revenir vers l'Accueil</a>
+</center>
+    
+</body>
+</html>
