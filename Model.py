@@ -22,11 +22,11 @@ class Panier(db.Model):
 class Paiment(db.Model):
     __tablename__ = 'paiment'
     
-    id =db.Column(db.Integer, primary_key=True)
+    id =db.Column(db.Integer, primary_key=True,autoincrement=True)
     first_name = db.Column(db.String(100), nullable=False)
     last_name = db.Column(db.String(100), nullable=False)
     card_name = db.Column(db.String(100), nullable=False)
-    card_number = db.Column(db.String(16), primary_key=True)
+    card_number = db.Column(db.String(16),  unique=True)
     expiry_date = db.Column(db.String(7), nullable=False)
     cvv = db.Column(db.String(4), nullable=False)
     address = db.Column(db.String(255), nullable=False)
